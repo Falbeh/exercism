@@ -12,4 +12,6 @@ let factors (number: int64) =
         | _ when number % divisor = 0 -> loop (number/divisor) divisor ((div)::acc)
         | _ when number % divisor <> 0 -> loop number (divisor+1L) acc 
         | _ -> failwith "invalid input"
-    loop number 2L []
+    loop number 2L [] 
+
+factors 973475L
