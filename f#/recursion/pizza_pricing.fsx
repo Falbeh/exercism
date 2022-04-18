@@ -1,6 +1,6 @@
 // Introductory Exercise
 // Recursion
-// 
+// Pattern mathcing with types and recursion - not the prettiest solution
 
 module PizzaPricing
 
@@ -47,10 +47,11 @@ let orderPrice(pizzas: Pizza list): int =
         | ExtraSauce(ExtraToppings(Margherita))::xs -> loop xs (10+acc) (1+c)
         | ExtraSauce(ExtraToppings(Caprese))::xs -> loop xs (12+acc) (1+c)
         | ExtraSauce(ExtraToppings(Formaggio))::xs -> loop xs (13+acc) (1+c)
+        | ExtraToppings(ExtraSauce(Margherita))::xs -> loop xs (10+acc) (1+c)
+        | ExtraToppings(ExtraSauce(Caprese))::xs -> loop xs (12+acc) (1+c)
+        | ExtraToppings(ExtraSauce(Formaggio))::xs -> loop xs (13+acc) (1+c)
         | ExtraToppings(Margherita)::xs -> loop xs (9+acc) (1+c)
         | ExtraToppings(Caprese)::xs -> loop xs (11+acc) (1+c)
         | ExtraToppings(Formaggio)::xs -> loop xs (12+acc) (1+c)
         | _ -> failwith "invalid input" 
     loop pizzas 0 0
-
-orderPrice [Caprese; Caprese; Caprese] 
