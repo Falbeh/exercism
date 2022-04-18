@@ -13,7 +13,7 @@ let leapYear (year: int): bool =
 
 leapYear 1996
 leapYear 2000
-leapYear 2024
+leapYear 2024 
 (* 
 on every year that is evenly divisible by 4
   except every year that is evenly divisible by 100
